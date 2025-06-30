@@ -68,6 +68,10 @@ public class UploadPatientPdfController {
         }
         cptCodes.put("cptCodes", cpt);
 
+        cptCodes.put("problemAddress", problemAddressed);
+        cptCodes.put("dataReviewed",dataReviewed);
+        cptCodes.put("riskOfComplication",riskOfComplication);
+
         return cptCodes;
     }
 }
