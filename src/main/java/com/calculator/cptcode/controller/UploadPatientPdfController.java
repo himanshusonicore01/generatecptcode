@@ -1,7 +1,7 @@
 package com.calculator.cptcode.controller;
 
 import com.calculator.cptcode.entity.NhsIllnessesCategorized;
-import com.calculator.cptcode.calculatebydatabase.service.*;
+import com.calculator.cptcode.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

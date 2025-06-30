@@ -1,8 +1,11 @@
 package com.calculator.cptcode.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Service
 public class TimeBasedCptCode {
     public static String getTimeBasedCptCode(String patientType, String text) {
         text = text.toLowerCase();

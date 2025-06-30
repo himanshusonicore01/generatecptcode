@@ -18,7 +18,7 @@ COPY --from=build /home/app/target/cptcode-0.0.1-SNAPSHOT.jar .
 VOLUME ["/logs"]
 
 # Expose port for external access
-EXPOSE 8080
+EXPOSE 6001
 
 # Set the default environment variable for Spring profile
 ENV SPRING_ACTIVE_PROFILES=default

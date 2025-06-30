@@ -1,5 +1,8 @@
 package com.calculator.cptcode.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CptCodeResolver {
 
     public static String getCptCode(String mdmLevel, String patientType) {

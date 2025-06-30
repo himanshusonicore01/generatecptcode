@@ -1,5 +1,8 @@
 package com.calculator.cptcode.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PatientType {
 
     public static String getPatientType(String text) {

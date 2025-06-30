@@ -42,39 +42,9 @@ public class TestBaseCptCode {
                         String lowerSection = section.toLowerCase();
 
                         keywordTrimmed = " "+keywordTrimmed+" ";
-//                        Pattern pattern = Pattern.compile("\\b" + Pattern.quote(keywordTrimmed) + "\\b");
                         Pattern pattern = Pattern.compile(Pattern.quote(keywordTrimmed));
                         Matcher matcher = pattern.matcher(lowerSection);
 
-//                        if (matcher.find()) {
-//
-//                            // STEP 1: Check if the section contains a negation before the keyword list
-//                            boolean isNegated = false;
-//
-//                            // Try to detect negation if it appears before symptom list
-//                            int keywordIndex = lowerSection.indexOf(keywordTrimmed);
-//                            int negationIndex = Integer.MAX_VALUE;
-//
-//                            for (String neg : negations) {
-//                                int idx = lowerSection.indexOf(neg);
-//                                if (idx != -1 && idx < keywordIndex && idx < negationIndex) {
-//                                    negationIndex = idx;
-//                                    isNegated = true;
-//                                }
-//                            }
-//
-//                            if (!isNegated) {
-//                                alreadyTest.add(keywordTrimmed);
-//                                System.out.println("Match Found:");
-//                                System.out.println("Test Name: " + test.getName());
-//                                System.out.println("Test Cpt Codes: " + test.getCpt_code());
-//                                if (test.getCpt_code() != null) {
-//                                    testCptCodes.add(test.getCpt_code());
-//                                }
-//                            }
-//
-//                            break; // No need to check further sections
-//                        }
                         if (matcher.find()) {
                             boolean isNegated = false;
 
