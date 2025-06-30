@@ -15,10 +15,9 @@ public class TestBaseCptCode {
     @Autowired
     private MedicalTestRepository medicalTestRepository;
 
-    public Map<String,Object> getAllMedicalTest(String text) {
+    public Set<String> getAllMedicalTest(String text) {
         List<MedicalTest> medicalTestList = medicalTestRepository.getAllMedicalTest();
 
-        Map<String,Object> matchRelateData = new HashMap<>();
         Set<String> testCptCodes = new HashSet<>();
 
         // 3. Search for related keywords
@@ -86,10 +85,7 @@ public class TestBaseCptCode {
                 }
             }
         }
-
-        matchRelateData.put("testCptCodes", testCptCodes);
-        matchRelateData.put("testRelatedName", alreadyTest);
-        return matchRelateData;
+        return testCptCodes;
     }
 
 

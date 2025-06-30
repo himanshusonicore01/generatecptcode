@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@RequestMapping("/use_database")
 @RestController
+@RequestMapping("/use_database")
 public class UploadPatientPdfController {
 
     @Autowired
@@ -52,19 +52,22 @@ public class UploadPatientPdfController {
 
         String cptCode = CptCodeResolver.getCptCode(mdmLevel, patientType);
         String timeCptCode = TimeBasedCptCode.getTimeBasedCptCode(patientType, text);
-        Map<String,Object> testCptCodes = testBaseCptCode.getAllMedicalTest(text);
+        Set<String> testCptCodes = testBaseCptCode.getAllMedicalTest(text);
 
         Map<String,Object> cptCodes = new HashMap<>();
         cptCodes.put("patient_type", patientType);
         cptCodes.put("mdm_level", mdmLevel);
-        cptCodes.put("mdm_based_cpt", cptCode);
+
+        List<String> cpt = new ArrayList<>();
+        cpt.add(cptCode);
         if (timeCptCode != null) {
-            cptCodes.put("time_based_cpt", timeCptCode);
+            cpt.add(timeCptCode);
         }
         if (testCptCodes != null) {
-            cptCodes.put("test_based_cpt", testCptCodes);
+            cpt.addAll(testCptCodes);
         }
-        cptCodes.putAll(illnessDetails);
+        cptCodes.put("cptCodes", cpt);
+
         return cptCodes;
     }
 }
